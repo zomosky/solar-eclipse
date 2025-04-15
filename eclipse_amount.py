@@ -18,11 +18,11 @@ from sunpy.coordinates import sun
 
 def amount(longitude,latitude, time_day):
     if longitude >180:longitude =longitude - 360
-    Location = EarthLocation.from geodetic(longitude *u.deg, latitude * u.deg)
+    Location = EarthLocation.geodetic(longitude *u.deg, latitude * u.deg)
     time_stant = Time(time_day)
-    times_bj=time_start +np,arange(0，60*24)*u.min
+    times_bj=time_start +np,arange(0, 60*24)*u.min
     times_utc =times_bj -8 * u.hour
-    observer = location,get itrs(times_utc)
+    observer = location,getitrs(times_utc)
 
     #Calculate the elipse amounts using a JPL ephemeris
     with solar_system_ephemeris.set('D:\DS\solar eclipse\de422.bsp'):
